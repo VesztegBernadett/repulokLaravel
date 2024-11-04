@@ -10,10 +10,10 @@
                     <a class="nav-link" href="{{ route('home') }}">Összes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home', ['' => '']) }}">Airbus</a>
+                    <a class="nav-link" href="{{ route('home', ['manufacturer' => 'Airbus']) }}">Airbus</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home', ['' => '']) }}">Boeing</a>
+                    <a class="nav-link" href="{{ route('home', ['manufacturer' => 'Boeing']) }}">Boeing</a>
                 </li>
             </ul>
         </div>

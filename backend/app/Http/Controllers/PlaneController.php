@@ -36,7 +36,7 @@ class PlaneController extends Controller
         }
         if (!is_null($orderBy) && !is_null($order)) {
         }
-        
+
         if (!is_null($orderBy) && !is_null($order)) {
             if ($order == "asc") {
                 $planes = $planes->sortBy($orderBy);
@@ -54,6 +54,19 @@ class PlaneController extends Controller
             "oldest" => $oldestPlane,
             "averageSeats" => $avgSeats
         ]);
+    }
+
+    function show(int $id):View{
+        $plane = $this->getPlanesCollection()->where("id","=","$id")->first();
+        if (is_null($plane)) {
+            abort(404);
+        }
+        else{
+            return view("plane.show",[
+                "title"=>$plane["manufacturer"] . " " . $plane["family"],
+                "plane"=>$plane
+            ]);
+        }
     }
 
     private function getPlanesCollection(): Collection

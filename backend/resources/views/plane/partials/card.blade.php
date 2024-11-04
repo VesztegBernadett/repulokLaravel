@@ -13,7 +13,10 @@
                 <li>Hajtóművek száma: {{$plane["engines"]}}</li>
                 <li>Maximum ülések száma: {{$plane["seats"]}}</li>
             </ul>
-            <a href="" class="btn btn-primary">További információk</a>
+            @php
+            $id = $plane["id"]
+            @endphp
+            <a href="{{ route('plane.show', ['id' => $id]) }}" class="btn btn-primary">További információk</a>
         </div>
     </div>
 </div>
